@@ -1,7 +1,3 @@
-baseURL = 'https://example.org/'
+baseURL = '/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.extensions]
-      highlight = true
+title = 'Alexander499 Blog'
