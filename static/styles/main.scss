@@ -1,0 +1,153 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+
+  > ul {
+    width: calc(100vw - 8px);
+    max-width: 960px;
+    display: grid;
+    gap: 8px;
+    list-style-type: none;
+
+    > li > a {
+      display: flex;
+      gap: 16px;
+      text-decoration: none;
+
+      > div.article-image {
+        display: flex;
+
+        img {
+          height: 180px;
+          aspect-ratio: 16/9;
+          object-fit: cover;
+          border: 1px var(--border) solid;
+          border-radius: 12px;
+        }
+      }
+
+      > div.article-content {
+        display: flex;
+        flex-direction: column;
+        padding: 8px 0;
+
+        > p {
+          color: var(--text-secondary);
+        }
+
+        > div {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          margin-top: auto;
+
+          > svg { stroke: var(--text-secondary); }
+          > time { color: var(--text-secondary); }
+        }
+      }
+    }
+  }
+
+  > div {
+    width: calc(100vw - 48px);
+    max-width: 880px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    > p, > time { color: var(--text-secondary); }
+
+    > ul.links {
+      display: flex;
+      gap: 8px;
+      list-style-type: none;
+  
+      > li > a {
+        height: 32px;
+        width: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--gray-secondary);
+        border-radius: 50%;
+        padding: 4px;
+        cursor: pointer;
+        transition-duration: 200ms;
+
+        &:hover { background-color: color-mix(in srgb, var(--gray-secondary), transparent 50%); }
+        &:active { scale: 0.9; }
+        img { height: 24px; }
+        svg { stroke: var(--text-secondary); }
+      }
+    }
+    
+    > div.article-image {
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 100%;
+        aspect-ratio: 16/9;
+        border: 1px var(--border) solid;
+        border-radius: 16px;
+        object-fit: cover;
+      }
+    }
+
+    > div.article-content {
+      > h1, > h2, > h3, > p, > blockquote, > ol, > ul, > table, > pre, > div:has(> pre), > dl { margin-bottom: 1rem; }
+      p, em, b, strong { color: var(--text-secondary); }
+      blockquote {
+        display: flex;
+        gap: 4px;
+
+        &::before {
+          height: 100;
+          width: 2px;
+          content: "";
+          background-color: var(--text-secondary);
+          border-radius: 2px;
+        }
+      }
+      ol, ul:not(:has(input[type=checkbox])) { padding-left: 2rem; }
+      code, pre {
+        background-color: var(--gray-secondary) !important;
+        border-radius: 4px;
+        padding: 2px 4px;
+      }
+      hr {
+        border: none;
+        border-bottom: 1px var(--gray-secondary) solid;
+        margin-bottom: 1rem;
+      }
+      a { color: cornflowerblue; }
+      img, table {
+        border: 1px var(--border) solid;
+        border-radius: 12px;
+      }
+      table { padding: 8px; }
+      > pre, > div > pre { padding: 8px; }
+      > div > pre > code { padding: 0; }
+      dl dt { font-weight: bold; }
+      dl dd { padding-left: 1rem; }
+      ul { list-style-type: none; }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  font-family: Consolas;
+  border-bottom: 1px var(--border-light) solid;
+  padding: 12px;
+  span { font-size: 32px; }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  {{ partial "header.html" . }}
+  <main>
+    <ul class="articles-list">
+      {{ range where .Site.RegularPages "Type" "article" }}
+        <li>
+          <a href="{{ .RelPermalink }}">
+            <div class="article-image">
+              <img {{ with .Params.image }}src="{{ . }}"{{ end }}>
+            </div>
+            <div class="article-content">
+              <h1>{{ .Title }}</h1>
+              {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+              <div>
+                <i data-lucide="calendar"></i>
+                <time datetime="{{ .Date.Format "2006-01-02" }}">
+                  {{ .Date.Format "02/01/2006" }}
+                </time>
+              </div>
+            </div>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </main>
+  {{ partial "footer.html" . }}
+</body>
+</html>

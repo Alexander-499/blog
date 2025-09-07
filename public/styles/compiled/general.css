@@ -1,0 +1,29 @@
+* {
+  color: var(--text-normal);
+  margin: 0;
+  padding: 0;
+}
+*::selection {
+  background-color: rgba(89, 167, 241, 0.5);
+}
+
+:root {
+  --background-main: #16181c;
+  --gray-secondary: #33363d;
+  --border-light: #8888;
+  --border: #2a2c32;
+  --text-normal: white;
+  --text-secondary: #96a2b0;
+  --color-scheme: dark;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--background-main);
+  font-family: Inter, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color-scheme: var(--color-scheme);
+  overflow-x: hidden;
+}/*# sourceMappingURL=general.css.map */

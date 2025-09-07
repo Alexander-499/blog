@@ -1,0 +1,153 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+}
+main > ul {
+  width: calc(100vw - 8px);
+  max-width: 960px;
+  display: grid;
+  gap: 8px;
+  list-style-type: none;
+}
+main > ul > li > a {
+  display: flex;
+  gap: 16px;
+  text-decoration: none;
+}
+main > ul > li > a > div.article-image {
+  display: flex;
+}
+main > ul > li > a > div.article-image img {
+  height: 180px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border: 1px var(--border) solid;
+  border-radius: 12px;
+}
+main > ul > li > a > div.article-content {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+}
+main > ul > li > a > div.article-content > p {
+  color: var(--text-secondary);
+}
+main > ul > li > a > div.article-content > div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: auto;
+}
+main > ul > li > a > div.article-content > div > svg {
+  stroke: var(--text-secondary);
+}
+main > ul > li > a > div.article-content > div > time {
+  color: var(--text-secondary);
+}
+main > div {
+  width: calc(100vw - 48px);
+  max-width: 880px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+main > div > p, main > div > time {
+  color: var(--text-secondary);
+}
+main > div > ul.links {
+  display: flex;
+  gap: 8px;
+  list-style-type: none;
+}
+main > div > ul.links > li > a {
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gray-secondary);
+  border-radius: 50%;
+  padding: 4px;
+  cursor: pointer;
+  transition-duration: 200ms;
+}
+main > div > ul.links > li > a:hover {
+  background-color: color-mix(in srgb, var(--gray-secondary), transparent 50%);
+}
+main > div > ul.links > li > a:active {
+  scale: 0.9;
+}
+main > div > ul.links > li > a img {
+  height: 24px;
+}
+main > div > ul.links > li > a svg {
+  stroke: var(--text-secondary);
+}
+main > div > div.article-image {
+  display: flex;
+  justify-content: center;
+}
+main > div > div.article-image img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: 1px var(--border) solid;
+  border-radius: 16px;
+  object-fit: cover;
+}
+main > div > div.article-content > h1, main > div > div.article-content > h2, main > div > div.article-content > h3, main > div > div.article-content > p, main > div > div.article-content > blockquote, main > div > div.article-content > ol, main > div > div.article-content > ul, main > div > div.article-content > table, main > div > div.article-content > pre, main > div > div.article-content > div:has(> pre), main > div > div.article-content > dl {
+  margin-bottom: 1rem;
+}
+main > div > div.article-content p, main > div > div.article-content em, main > div > div.article-content b, main > div > div.article-content strong {
+  color: var(--text-secondary);
+}
+main > div > div.article-content blockquote {
+  display: flex;
+  gap: 4px;
+}
+main > div > div.article-content blockquote::before {
+  height: 100;
+  width: 2px;
+  content: "";
+  background-color: var(--text-secondary);
+  border-radius: 2px;
+}
+main > div > div.article-content ol, main > div > div.article-content ul:not(:has(input[type=checkbox])) {
+  padding-left: 2rem;
+}
+main > div > div.article-content code, main > div > div.article-content pre {
+  background-color: var(--gray-secondary) !important;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+main > div > div.article-content hr {
+  border: none;
+  border-bottom: 1px var(--gray-secondary) solid;
+  margin-bottom: 1rem;
+}
+main > div > div.article-content a {
+  color: cornflowerblue;
+}
+main > div > div.article-content img, main > div > div.article-content table {
+  border: 1px var(--border) solid;
+  border-radius: 12px;
+}
+main > div > div.article-content table {
+  padding: 8px;
+}
+main > div > div.article-content > pre, main > div > div.article-content > div > pre {
+  padding: 8px;
+}
+main > div > div.article-content > div > pre > code {
+  padding: 0;
+}
+main > div > div.article-content dl dt {
+  font-weight: bold;
+}
+main > div > div.article-content dl dd {
+  padding-left: 1rem;
+}
+main > div > div.article-content ul {
+  list-style-type: none;
+}/*# sourceMappingURL=main.css.map */
