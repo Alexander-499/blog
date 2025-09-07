@@ -88,8 +88,6 @@ These are the elements outlined in John Gruber’s original design document. All
 
 Here's a sentence with a footnote. [^1]
 
-[^1]: This is the footnote.
-    
 ### Definition List
 
 term
@@ -104,3 +102,5 @@ term
 - [X] Write the press release
 - [ ] Update the website
 - [ ] Contact the media
+
+[^1]: This is the footnote.

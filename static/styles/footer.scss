@@ -1,1 +1,7 @@
-footer { padding: 12px; }
+footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px var(--border-light) solid;
+  padding: 12px;
+}
