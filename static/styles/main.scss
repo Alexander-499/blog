@@ -91,6 +91,11 @@ main {
       display: flex;
       justify-content: center;
 
+      @media (max-width: 520px) {
+        width: 100vw;
+        translate: -24px;
+      }
+
       img {
         width: 100%;
         aspect-ratio: 16/9;
@@ -98,12 +103,15 @@ main {
         border-radius: 16px;
         object-fit: cover;
         cursor: pointer;
+        @media (max-width: 520px) { border-radius: 0; }
       }
     }
 
     > div.article-content {
-      > h1, > h2, > h3, > p, > blockquote, > ol, > ul, > table, > pre, > div:has(> pre), > dl { margin-bottom: 1rem; }
-      p, em, b, strong { color: var(--text-secondary); }
+      margin-top: 12px;
+
+      > h1, > h2, > h3, > p, > blockquote, > ol, > ul, > table, pre:not([style]), > div:has(> pre), > dl { margin-bottom: 1rem; }
+      p, em, li { color: var(--text-secondary); }
       blockquote {
         display: flex;
         gap: 4px;
@@ -117,10 +125,96 @@ main {
         }
       }
       ol, ul:not(:has(input[type=checkbox])) { padding-left: 2rem; }
-      code, pre {
-        background-color: var(--gray-secondary) !important;
+      code:not([data-lang]) {
+        background-color: var(--gray-secondary);
         border-radius: 4px;
         padding: 2px 4px;
+      }
+      div.highlight {
+        counter-reset: code;
+        background-color: var(--gray-dark) !important;
+        border: 1px var(--border) solid;
+        border-radius: 12px;
+        margin: 1rem 0;
+        overflow: hidden;
+
+        pre {
+          background-color: var(--gray-dark) !important;
+          white-space: pre-wrap;
+          padding: 4px 12px 16px;
+
+          code > span::before {
+            display: flex;
+            justify-content: right;
+            min-width: 22px;
+            content: counter(code);
+            counter-increment: code;
+            color: gray;
+            margin-right: 8px;
+          }
+        }
+      }
+      pre:not([style]) {
+        background-color: var(--gray-dark) !important;
+        white-space: pre-wrap;
+        border: 1px var(--border) solid;
+        border-radius: 12px;
+        margin-top: 1rem;
+        padding: 4px 0px 16px;
+
+        code {
+          display: block;
+          background-color: transparent;
+          padding: 0 12px;
+        }
+      }
+      div.highlight, pre:not([style]) {
+        div.code-header {
+          height: 36px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          svg {
+            height: 20px;
+            stroke: gray;
+          }
+
+          &::before {
+            height: 12px;
+            width: 12px;
+            content: "";
+            display: inline-block;
+            background-color: #ff5f56;
+            border-radius: 50%;
+            margin-left: 16px;
+            box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
+          }
+
+          > span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            &::after {
+              content: attr(data-label);
+              font-size: 14px;
+              font-weight: 600;
+              color: gray;
+            }
+          }
+
+          > button {
+            height: 28px;
+            width: 28px;
+            background-color: transparent;
+            border: none;
+            margin: 0 4px;
+            cursor: pointer;
+            transition-duration: 200ms;
+            &:active { scale: 0.8; }
+          }
+        }
       }
       hr {
         border: none;
@@ -128,16 +222,17 @@ main {
         margin-bottom: 1rem;
       }
       a { color: cornflowerblue; }
-      img, table {
-        border: 1px var(--border) solid;
-        border-radius: 12px;
+      img, table { border-radius: 12px; }
+      p:has(> img) {
+        display: flex;
+        justify-content: center;
       }
+      table { border: 1px var(--border) solid; }
       table { padding: 8px; }
       > pre, > div > pre { padding: 8px; }
       > div > pre > code { padding: 0; }
       dl dt { font-weight: bold; }
       dl dd { padding-left: 1rem; }
-      ul { list-style-type: none; }
     }
   }
 }

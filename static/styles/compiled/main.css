@@ -93,6 +93,12 @@ main > div > div.article-image {
   display: flex;
   justify-content: center;
 }
+@media (max-width: 520px) {
+  main > div > div.article-image {
+    width: 100vw;
+    translate: -24px;
+  }
+}
 main > div > div.article-image img {
   width: 100%;
   aspect-ratio: 16/9;
@@ -101,10 +107,18 @@ main > div > div.article-image img {
   object-fit: cover;
   cursor: pointer;
 }
-main > div > div.article-content > h1, main > div > div.article-content > h2, main > div > div.article-content > h3, main > div > div.article-content > p, main > div > div.article-content > blockquote, main > div > div.article-content > ol, main > div > div.article-content > ul, main > div > div.article-content > table, main > div > div.article-content > pre, main > div > div.article-content > div:has(> pre), main > div > div.article-content > dl {
+@media (max-width: 520px) {
+  main > div > div.article-image img {
+    border-radius: 0;
+  }
+}
+main > div > div.article-content {
+  margin-top: 12px;
+}
+main > div > div.article-content > h1, main > div > div.article-content > h2, main > div > div.article-content > h3, main > div > div.article-content > p, main > div > div.article-content > blockquote, main > div > div.article-content > ol, main > div > div.article-content > ul, main > div > div.article-content > table, main > div > div.article-content pre:not([style]), main > div > div.article-content > div:has(> pre), main > div > div.article-content > dl {
   margin-bottom: 1rem;
 }
-main > div > div.article-content p, main > div > div.article-content em, main > div > div.article-content b, main > div > div.article-content strong {
+main > div > div.article-content p, main > div > div.article-content em, main > div > div.article-content li {
   color: var(--text-secondary);
 }
 main > div > div.article-content blockquote {
@@ -121,10 +135,88 @@ main > div > div.article-content blockquote::before {
 main > div > div.article-content ol, main > div > div.article-content ul:not(:has(input[type=checkbox])) {
   padding-left: 2rem;
 }
-main > div > div.article-content code, main > div > div.article-content pre {
-  background-color: var(--gray-secondary) !important;
+main > div > div.article-content code:not([data-lang]) {
+  background-color: var(--gray-secondary);
   border-radius: 4px;
   padding: 2px 4px;
+}
+main > div > div.article-content div.highlight {
+  counter-reset: code;
+  background-color: var(--gray-dark) !important;
+  border: 1px var(--border) solid;
+  border-radius: 12px;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+main > div > div.article-content div.highlight pre {
+  background-color: var(--gray-dark) !important;
+  white-space: pre-wrap;
+  padding: 4px 12px 16px;
+}
+main > div > div.article-content div.highlight pre code > span::before {
+  display: flex;
+  justify-content: right;
+  min-width: 22px;
+  content: counter(code);
+  counter-increment: code;
+  color: gray;
+  margin-right: 8px;
+}
+main > div > div.article-content pre:not([style]) {
+  background-color: var(--gray-dark) !important;
+  white-space: pre-wrap;
+  border: 1px var(--border) solid;
+  border-radius: 12px;
+  margin-top: 1rem;
+  padding: 4px 0px 16px;
+}
+main > div > div.article-content pre:not([style]) code {
+  display: block;
+  background-color: transparent;
+  padding: 0 12px;
+}
+main > div > div.article-content div.highlight div.code-header, main > div > div.article-content pre:not([style]) div.code-header {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main > div > div.article-content div.highlight div.code-header svg, main > div > div.article-content pre:not([style]) div.code-header svg {
+  height: 20px;
+  stroke: gray;
+}
+main > div > div.article-content div.highlight div.code-header::before, main > div > div.article-content pre:not([style]) div.code-header::before {
+  height: 12px;
+  width: 12px;
+  content: "";
+  display: inline-block;
+  background-color: #ff5f56;
+  border-radius: 50%;
+  margin-left: 16px;
+  box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
+}
+main > div > div.article-content div.highlight div.code-header > span, main > div > div.article-content pre:not([style]) div.code-header > span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+main > div > div.article-content div.highlight div.code-header > span::after, main > div > div.article-content pre:not([style]) div.code-header > span::after {
+  content: attr(data-label);
+  font-size: 14px;
+  font-weight: 600;
+  color: gray;
+}
+main > div > div.article-content div.highlight div.code-header > button, main > div > div.article-content pre:not([style]) div.code-header > button {
+  height: 28px;
+  width: 28px;
+  background-color: transparent;
+  border: none;
+  margin: 0 4px;
+  cursor: pointer;
+  transition-duration: 200ms;
+}
+main > div > div.article-content div.highlight div.code-header > button:active, main > div > div.article-content pre:not([style]) div.code-header > button:active {
+  scale: 0.8;
 }
 main > div > div.article-content hr {
   border: none;
@@ -135,8 +227,14 @@ main > div > div.article-content a {
   color: cornflowerblue;
 }
 main > div > div.article-content img, main > div > div.article-content table {
-  border: 1px var(--border) solid;
   border-radius: 12px;
+}
+main > div > div.article-content p:has(> img) {
+  display: flex;
+  justify-content: center;
+}
+main > div > div.article-content table {
+  border: 1px var(--border) solid;
 }
 main > div > div.article-content table {
   padding: 8px;
@@ -152,7 +250,4 @@ main > div > div.article-content dl dt {
 }
 main > div > div.article-content dl dd {
   padding-left: 1rem;
-}
-main > div > div.article-content ul {
-  list-style-type: none;
 }/*# sourceMappingURL=main.css.map */
