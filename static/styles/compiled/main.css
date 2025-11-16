@@ -118,7 +118,7 @@ main > div > div.article-content {
 main > div > div.article-content > h1, main > div > div.article-content > h2, main > div > div.article-content > h3, main > div > div.article-content > p, main > div > div.article-content > blockquote, main > div > div.article-content > ol, main > div > div.article-content > ul, main > div > div.article-content > table, main > div > div.article-content pre:not([style]), main > div > div.article-content > div:has(> pre), main > div > div.article-content > dl {
   margin-bottom: 1rem;
 }
-main > div > div.article-content p, main > div > div.article-content em, main > div > div.article-content li {
+main > div > div.article-content p, main > div > div.article-content em, main > div > div.article-content li, main > div > div.article-content del {
   color: var(--text-secondary);
 }
 main > div > div.article-content blockquote {

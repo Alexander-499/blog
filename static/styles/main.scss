@@ -111,7 +111,7 @@ main {
       margin-top: 12px;
 
       > h1, > h2, > h3, > p, > blockquote, > ol, > ul, > table, pre:not([style]), > div:has(> pre), > dl { margin-bottom: 1rem; }
-      p, em, li { color: var(--text-secondary); }
+      p, em, li, del { color: var(--text-secondary); }
       blockquote {
         display: flex;
         gap: 4px;
